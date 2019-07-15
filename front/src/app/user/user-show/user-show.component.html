@@ -1,0 +1,10 @@
+<p *ngIf="isFound">
+  This is your user: <br />
+  ID: {{ user.id }} <br />
+  Name: {{ user.name }} <br />
+  Role: {{ user.role }} <br />
+</p>
+
+<p *ngIf="!isFound">
+  No user found with this id
+</p>

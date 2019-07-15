@@ -1,0 +1,40 @@
+<div>
+  Hey here it's the user component
+  <a routerLink="create">Create a new user</a>
+  <table *ngIf="users.length > 0">
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Show</td>
+      <td>Update</td>
+      <td>Delete</td>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>
+          <a [routerLink]="['show', user.id]">
+          Show
+        </a>
+      </td>
+      <td>
+        <a [routerLink]="['update', user.id]">
+          Update
+        </a>
+      </td>
+      <td>
+        <button (click)="deleteUser(user.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </table>
+
+  <p *ngIf="users.length == 0">
+    No users
+  </p>
+</div>
+
+-------------
+
+<router-outlet></router-outlet>

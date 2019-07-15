@@ -1,0 +1,18 @@
+<div>
+    Update your user<br />
+    <div *ngIf="isFound">
+        <label>ID</label>
+        <input type="text" name="id" [(ngModel)]="user.id" disabled/><br />
+
+        <label>Name</label>
+        <input type="text" name="name" [(ngModel)]="user.name"/><br />
+
+        <label>Role</label>
+        <input type="text" name="role" [(ngModel)]="user.role"/><br />
+
+        <button (click)="updateUser()">Update</button>
+    </div>
+    <p *ngIf="!isFound">
+      No user found with this id
+    </p>
+  </div>
